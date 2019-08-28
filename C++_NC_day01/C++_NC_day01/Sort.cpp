@@ -9,17 +9,17 @@ void Swap(int *a, int *b)
 
 void Print(int *ar, int n)
 {
-	for (int i = 0; i < n; i++)
+	for (auto i : ar)
 	{
-		cout << ar[i] << " ";
+		cout << i;
 	}
 	cout << endl;
 }
 void Print(float *ar, int n)
 {
-	for (int i = 0; i < n; i++)
+	for (auto i : ar)
 	{
-		cout << ar[i] << " ";
+		cout << i;
 	}
 	cout << endl;
 }
@@ -219,25 +219,13 @@ void QuickSort(int *ar, int size)
 
 void Sort2(int *ar, int size, int flag = 0)
 {
-	if (flag == 0)
+	switch (flag)
 	{
-		InsertSort(ar, size);
-	}
-	else if (flag == 1)
-	{
-		ShellSort(ar, size);
-	}
-	else if (flag == 2)
-	{
-		MergeSort(ar, size);
-	}
-	else if (flag == 3)
-	{
-		QuickSort(ar, size);
-	}
-	else
-	{
-		return;
+	case 0:InsertSort(ar, size); break;
+	case 1:ShellSort(ar, size); break;
+	case 2:MergeSort(ar, size); break;
+	case 3:QuickSort(ar, size); break;
+	default:break;
 	}
 }
 
@@ -249,56 +237,3 @@ void Test2()
 	Print(ar, n);
 }
 
-void DealStructSort(void **p,int size)
-{
-	int * ar = new int[size];
-	for (int i = 0; i < size;i++)
-	{
-		ar[i] = sizeof(p[i]);
-	}
-	Sort2(ar, size);
-	delete []ar;
-	Print(ar, size);
-}
-void Test3()
-{
-	typedef struct A
-	{
-		int a[2];
-		char b;
-		float c;
-		short d;
-	}AA;
-	typedef struct B
-	{
-		char a[7];
-		int b;
-		float c;
-		short d[3];
-	}BB;
-	typedef struct C
-	{
-		float a;
-		int b;
-		long c[4];
-		int d;
-	}CC;
-	typedef struct D
-	{
-		long a;
-		int b;
-		short c;
-		char d[6];
-	}DD;
-	AA AAA;
-	BB BBB;
-	CC CCC;
-	DD DDD;
-	void *p = &AAA;
-	printf("%d\n", sizeof(*p));
-	/*void *p[4] = { &AAA, &BBB, &CCC, &DDD };*/
-	/*int size = sizeof(p) / sizeof(p[0]);
-	printf("%d %d %d %d\n", sizeof(p[0][0])), sizeof(*p[1][0]), sizeof(*p[2]), sizeof(*p[3]));*/
-
-	/*DealStructSort(p, size);*/
-}	
