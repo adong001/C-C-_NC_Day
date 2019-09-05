@@ -41,13 +41,22 @@ bool CmpPoker3(Poker a, Poker b)//斗地主模式排序
 {
 	if (a.point <= 2)//改变A和2的点数，大于K
 	{
-		a.point += 13;
+		a.point += 11;
 	}
-	if (a.point>2)//改变3--K的点数，3为最小点数
+	else if (a.point>2 && a.point < 14)//改变3--K的点数，3为最小点数
 	{
 		a.point -= 2;
 	}
-	return (a.point < b.point);//再按点数从小到大排序
+	if (b.point <= 2)//改变A和2的点数，大于K
+	{
+		b.point += 11;
+	}
+	else if (b.point>2 &&b.point <14)//改变3--K的点数，3为最小点数
+	{
+		b.point -= 2;
+	}
+	return (a.point > b.point) ||
+		(a.point == b.point && a.type < b.type);//再按点数从小到大排序
 }
 
 void InsertSort(Poker *pk, int size, bool(*cmp)(Poker, Poker))
