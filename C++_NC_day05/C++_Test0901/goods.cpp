@@ -44,7 +44,7 @@ void Goods::PushGoods()//进货
 void Goods::Purchase(Goods *goods)//打折
 {
 	double discount;
-	cout << "t\t\t\t输入你要打的折扣：(8折-8,9.5折-9.5)";
+	cout << "t\t\t\t输入你要打的折扣：(8折-8,9.5折-9.5)\n";
 	cin >> discount;
 	s_discount = discount * 0.1;
 	for (int i = 0; i < s_kinds; i++)
@@ -65,7 +65,7 @@ void Goods::ShowGoods(Goods *goods)//显示所有商品信息
 	printf("\t\t\t\t商品名称\t   单价(Kg/元)\t\t数量 \n\n");
 	for (i = 0; i < s_kinds; i++)
 	{
-		printf("\t\t\t\t%-20s%-20f%-20d\n", goods[i].m_name, goods[i].m_price, goods[i].m_amount);
+		printf("\t\t\t\t%-20s%-20.2f%-20d\n", goods[i].m_name, goods[i].m_price, goods[i].m_amount);
 	}
 	cout<<"\n\n\t\t\t\t共计"<<s_kinds<<"件商品\n";
 }
