@@ -21,9 +21,15 @@
     <ClCompile Include="String.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
+    <ClCompile Include="HighAcc.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="String.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HighAcc.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
