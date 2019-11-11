@@ -1,0 +1,16 @@
+﻿生成启动时间为 2019/11/11 23:26:10。
+     1>项目“D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day03\C++_CN_Day03\C++_CN_Day03.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\c语言\VS2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "找出数组中出现超过一半的数字.cpp"
+         找出数组中出现超过一半的数字.cpp
+     1>d:\本地仓库\c&ds&c++\c-ds-c++\c++_cn_day03\c++_cn_day03\找出数组中出现超过一半的数字.cpp(37): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\本地仓库\c&ds&c++\c-ds-c++\c++_cn_day03\c++_cn_day03\找出数组中出现超过一半的数字.cpp(60): warning C4018: “>”: 有符号/无符号不匹配
+       Link:
+         D:\c语言\VS2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day03\Debug\C++_CN_Day03.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day03\Debug\C++_CN_Day03.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day03\Debug\C++_CN_Day03.lib" /MACHINE:X86 "Debug\找出数组中出现超过一半的数字.obj"
+         "Debug\找出连续最长的数字串.obj"
+         C++_CN_Day03.vcxproj -> D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day03\Debug\C++_CN_Day03.exe
+     1>已完成生成项目“D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day03\C++_CN_Day03\C++_CN_Day03.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.84
