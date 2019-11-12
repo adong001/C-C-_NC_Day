@@ -37,7 +37,7 @@ public:
 		return num * flag;
 	}
 };
-int main2()
+int main4()
 {
 	Solution test;
 	string s;

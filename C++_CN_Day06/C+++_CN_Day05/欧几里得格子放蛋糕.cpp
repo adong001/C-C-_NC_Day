@@ -3,7 +3,7 @@
 #include<vector>
 using namespace std;
 
-int main()
+int main2()
 {
 	int W,H;
 	cin >> W >> H;

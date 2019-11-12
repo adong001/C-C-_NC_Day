@@ -65,7 +65,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="只输出字符的一次.cpp" />
-    <ClCompile Include="t2.cpp" />
+    <ClCompile Include="log%28n%29查找.cpp" />
     <ClCompile Include="字符串转整型.cpp" />
     <ClCompile Include="欧几里得格子放蛋糕.cpp" />
   </ItemGroup>

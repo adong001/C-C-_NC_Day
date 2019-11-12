@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="t2.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="只输出字符的一次.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -25,6 +22,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="字符串转整型.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="log%28n%29查找.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
