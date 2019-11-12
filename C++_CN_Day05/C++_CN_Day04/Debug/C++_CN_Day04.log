@@ -1,17 +1,18 @@
-﻿生成启动时间为 2019/11/10 9:05:08。
-     1>项目“D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day04\C++_CN_Day04\C++_CN_Day04.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2019/11/12 17:37:29。
+     1>项目“D:\本地仓库\C-C++_NC_Day\C++_CN_Day05\C++_CN_Day04\C++_CN_Day04.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          D:\c语言\VS2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "最大子段合.cpp"
          最大子段合.cpp
-     1>d:\本地仓库\c&ds&c++\c-ds-c++\c++_cn_day04\c++_cn_day04\最大子段合.cpp(20): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\本地仓库\c&ds&c++\c-ds-c++\c++_cn_day04\c++_cn_day04\最大子段合.cpp(64): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\本地仓库\c&ds&c++\c-ds-c++\c++_cn_day04\c++_cn_day04\最大子段合.cpp(68): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\本地仓库\c-c++_nc_day\c++_cn_day05\c++_cn_day04\最大子段合.cpp(8): warning C4101: “num”: 未引用的局部变量
+     1>d:\本地仓库\c-c++_nc_day\c++_cn_day05\c++_cn_day04\最大子段合.cpp(46): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\本地仓库\c-c++_nc_day\c++_cn_day05\c++_cn_day04\最大子段合.cpp(50): warning C4018: “<”: 有符号/无符号不匹配
        Link:
-         D:\c语言\VS2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day04\Debug\C++_CN_Day04.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day04\Debug\C++_CN_Day04.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day04\Debug\C++_CN_Day04.lib" /MACHINE:X86 "Debug\最大子段合.obj"
+         D:\c语言\VS2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\本地仓库\C-C++_NC_Day\C++_CN_Day05\Debug\C++_CN_Day04.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\本地仓库\C-C++_NC_Day\C++_CN_Day05\Debug\C++_CN_Day04.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\本地仓库\C-C++_NC_Day\C++_CN_Day05\Debug\C++_CN_Day04.lib" /MACHINE:X86 Debug\main.obj
+         "Debug\最大子段合.obj"
          "Debug\回文串.obj"
-         C++_CN_Day04.vcxproj -> D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day04\Debug\C++_CN_Day04.exe
-     1>已完成生成项目“D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day04\C++_CN_Day04\C++_CN_Day04.vcxproj”(Build 个目标)的操作。
+         C++_CN_Day04.vcxproj -> D:\本地仓库\C-C++_NC_Day\C++_CN_Day05\Debug\C++_CN_Day04.exe
+     1>已完成生成项目“D:\本地仓库\C-C++_NC_Day\C++_CN_Day05\C++_CN_Day04\C++_CN_Day04.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:00.98
+已用时间 00:00:00.83

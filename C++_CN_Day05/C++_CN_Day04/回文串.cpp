@@ -21,35 +21,32 @@ bool IsPalindrome(string& src)
 }
 
 int ToPalindrome()
-{
-	string src;
+{	string src;
 	string dest;
+	int count = 0;
 	getline(cin, src);
 	getline(cin, dest);
 	if (src.empty() || dest.empty())
 	{
-		return -2;
+		return -1;
 	}
 	int src_size = src.size();
 	int i;
-	for (i = -1; i < src.size(); i++)
+	for (i = 0; i < src.size(); i++)
 	{
 		string tmp = src;
 		tmp.insert(i, dest);
 		if (IsPalindrome(tmp))
 		{
-			return i;
+			count++;
 		}
 	}
-
+	return count;
 }
 
 
-int main()
+int main4()
 {
-	string s1("haha");
-	s1.insert(0, "o");
-	cout << s1 << endl;
 	cout << ToPalindrome()<<endl;
     system("pause");
     return 0;
