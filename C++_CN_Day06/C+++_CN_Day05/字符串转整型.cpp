@@ -14,9 +14,9 @@ public:
 			return 0;
 		}
 
-		for (int i = 0; i < str.size();i++)
+		for (int i = 0; i < str.size(); i++)
 		{
-			if (str[i] == '-' && i== 0)
+			if (str[i] == '-' && i == 0)
 			{
 				flag = -1;
 			}
@@ -26,8 +26,13 @@ public:
 			}
 			else if (str[i] >= '0' && str[i] <= '9')
 			{
+
 				num *= 10;
 				num += (str[i] - '0');
+				if ((num-str[i]-'0')< str[i] -'0')//看是否越界
+				{
+					return 0;
+				}
 			}
 			else
 			{
@@ -37,14 +42,11 @@ public:
 		return num * flag;
 	}
 };
-int main4()
+int main()
 {
 	Solution test;
-	string s;
-	while (1)
-	{
-		cout << test.StrToInt(s) << endl;
-	}
-    system("pause");
-    return 0;
+	string s("123");
+	cout << test.StrToInt(s) << endl;
+	system("pause");
+	return 0;
 }
