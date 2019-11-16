@@ -64,6 +64,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="满完全二叉树求公共祖先.cpp" />
     <ClCompile Include="输出一个二进制数中最大连续1的个数.cpp" />
   </ItemGroup>
