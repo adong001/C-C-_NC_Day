@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="判断井字棋玩家获胜.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="main1.cpp">
+    <ClCompile Include="判断密码安全等级.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

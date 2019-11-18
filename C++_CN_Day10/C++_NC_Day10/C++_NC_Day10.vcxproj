@@ -64,8 +64,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="main1.cpp" />
+    <ClCompile Include="判断密码安全等级.cpp" />
+    <ClCompile Include="判断井字棋玩家获胜.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
