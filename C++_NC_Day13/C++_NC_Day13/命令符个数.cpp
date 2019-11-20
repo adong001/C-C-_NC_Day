@@ -4,49 +4,60 @@
 #include<vector>
 using namespace std;
 
-int main1()
+int main()
 {
-	int sum = 0, sign = 0;
+	int sum = -1;
 	int i = 0;
-	int flag = 0;
-	string str;
-	vector<string> tmp;
-	getline(cin, str);
+	string str("   ls \"s cd\" ds  ");
+	vector<string> vs;
 
-	while (str[i] == ' '&& i < str.size())//找到第一个非空格
-	{
-		i++;
-	}
+	//getline(cin, str);
 
-	for (; i < str.size(); i++)
+	while(i < str.size())
 	{
-		if (str[i] == '"'&& sign == 0)
+
+		if (str[i] == ' ')
 		{
-			sign++;
+			while (str[i] == ' '&& i < str.size())//找到第一个非空格
+			{
+				i++;
+			}
 		}
 
-		else if (str[i] == '"'&& sign == 0)
+		else if (str[i] == '"')
 		{
-			sign--;
 			sum++;
-		}
-
-		else if (str[i] != ' ')
-		{
-			continue;
+			i++;
+			vs.push_back(string());
+			while (str[i] != '"'&& i < str.size())
+			{
+				vs[sum].push_back(str[i]);
+				i++;
+			}
+			if (str[i - 1] == '"')
+			{
+				return -1;
+			}
+			i++;
 		}
 
 		else
 		{
-			while (str[i] == ' '&& i < str.size())
+			sum++;
+			vs.push_back(string());
+			while (str[i] != ' '&& i < str.size())
 			{
+				vs[sum].push_back(str[i]);
 				i++;
 			}
-			i--;
-			sum++;
+			
 		}
 	}
-	cout << sum << endl;
+	cout << sum + 1 << endl;
+	for (auto& ch : vs)
+	{
+		cout << ch << endl;
+	}
 	system("pause");
 	return 0;
 }

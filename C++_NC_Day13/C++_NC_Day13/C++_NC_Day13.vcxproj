@@ -65,6 +65,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="命令符个数.cpp" />
+    <ClCompile Include="找只出现一次的字符.cpp" />
     <ClCompile Include="跳台阶.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

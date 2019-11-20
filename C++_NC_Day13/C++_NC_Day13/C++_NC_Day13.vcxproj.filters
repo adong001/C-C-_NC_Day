@@ -21,5 +21,8 @@
     <ClCompile Include="跳台阶.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="找只出现一次的字符.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

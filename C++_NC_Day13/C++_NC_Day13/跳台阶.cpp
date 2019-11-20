@@ -1,44 +1,52 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<iostream>
 #include<cmath>
+#include<vector>
+#include <algorithm>
 using namespace std;
 
-bool IsPrime(int num)
+int JumpStep()
 {
-	int i;
-	for (i = 2; i <= sqrt(num); i++)
-	{
-		if (num % i == 0)
-		{
-			return false;
-		}
-	}
-	return true;
-}
-
-int main()
-{
-	int begin, end;
-	cin >> begin >> end;
-	if (begin<4 || end>10000 || begin > end)
+	int begin =8, end =85678;
+	int count = 0;
+	//cin >> begin >> end;
+	if (begin < 4 || end>100000 || begin > end)
 	{
 		return -1;
 	}
-	int i,j;
+	vector<int> steps(end + 1, INT_MAX);
+	steps[begin] = 0;
+	int i, j = 0;
 
 	for (i = begin; i <= end; i++)
 	{
-		for (j = begin / 2; j >= 2; j--)
+		if (steps[i] == INT_MAX)
 		{
+			continue;
+		}
 
-			if (begin % j == 0 && !IsPrime(begin + j))
+		for (j = 2; j <= sqrt(i); j++)
+		{
+			if (i % j == 0  && (i + j) <= end)
 			{
-				begin += j;
-				break;
+				steps[i + j] = min(steps[i] + 1, steps[i + j]);
+			}
+			if (i % (i / j) == 0  && (i + i / j) <= end)
+			{
+				steps[i + (i / j)] = min(steps[i] + 1, steps[i + (i / j)]);
 			}
 		}
 	}
 
-    system("pause");
-    return 0;
+	if (steps[end] == INT_MAX)
+	{
+		return -1;
+	}
+	return steps[end];
+}
+int main2()
+{
+	cout << JumpStep() << endl;
+	system("pause");
+	return 0;
 }
