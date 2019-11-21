@@ -39,7 +39,6 @@ int main2()
 		}
 	}
 
-   
 	if (res.size() >= 2)
 	{
 		 min = res[1] - res[0];

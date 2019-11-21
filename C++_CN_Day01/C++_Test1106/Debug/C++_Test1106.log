@@ -1,17 +1,23 @@
-﻿生成启动时间为 2019/11/8 19:03:30。
-     1>项目“D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day01\C++_Test1106\C++_Test1106.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2019/11/21 9:44:44。
+     1>项目“D:\本地仓库\C-C++_NC_Day\C++_CN_Day01\C++_Test1106\C++_Test1106.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         D:\c语言\VS2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt t4.cpp
-         t4.cpp
-     1>d:\本地仓库\c&ds&c++\c-ds-c++\c++_cn_day01\c++_test1106\t4.cpp(54): warning C4101: “j”: 未引用的局部变量
+         D:\c语言\VS2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "最大子段和.cpp" "删除公共字符.cpp" "1-n数组排序.cpp" "各组中值总和最大.cpp"
+         各组中值总和最大.cpp
+     1>d:\本地仓库\c-c++_nc_day\c++_cn_day01\c++_test1106\各组中值总和最大.cpp(54): warning C4101: “j”: 未引用的局部变量
+         1-n数组排序.cpp
+         删除公共字符.cpp
+     1>d:\本地仓库\c-c++_nc_day\c++_cn_day01\c++_test1106\删除公共字符.cpp(97): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\本地仓库\c-c++_nc_day\c++_cn_day01\c++_test1106\删除公共字符.cpp(102): warning C4018: “<”: 有符号/无符号不匹配
+         最大子段和.cpp
+         正在生成代码...
        Link:
-         D:\c语言\VS2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day01\Debug\C++_Test1106.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day01\Debug\C++_Test1106.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day01\Debug\C++_Test1106.lib" /MACHINE:X86 Debug\t1.obj
-         Debug\t2.obj
-         Debug\t3.obj
-         Debug\t4.obj
-         C++_Test1106.vcxproj -> D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day01\Debug\C++_Test1106.exe
-     1>已完成生成项目“D:\本地仓库\C&DS&C++\C-DS-C++\C++_CN_Day01\C++_Test1106\C++_Test1106.vcxproj”(Build 个目标)的操作。
+         D:\c语言\VS2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\本地仓库\C-C++_NC_Day\C++_CN_Day01\Debug\C++_Test1106.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\本地仓库\C-C++_NC_Day\C++_CN_Day01\Debug\C++_Test1106.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\本地仓库\C-C++_NC_Day\C++_CN_Day01\Debug\C++_Test1106.lib" /MACHINE:X86 "Debug\最大子段和.obj"
+         "Debug\删除公共字符.obj"
+         "Debug\1-n数组排序.obj"
+         "Debug\各组中值总和最大.obj"
+         C++_Test1106.vcxproj -> D:\本地仓库\C-C++_NC_Day\C++_CN_Day01\Debug\C++_Test1106.exe
+     1>已完成生成项目“D:\本地仓库\C-C++_NC_Day\C++_CN_Day01\C++_Test1106\C++_Test1106.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:01.20
+已用时间 00:00:02.66

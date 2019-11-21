@@ -77,7 +77,9 @@ long long Max_Mid_Sum()
 
 int main()
 {
-	cout << Max_Mid_Sum();
+	char ar[] = { "ad\0a" };
+	//cout << Max_Mid_Sum();
+	cout << sizeof(ar);
 	system("pause");
 	return 0;
 }
