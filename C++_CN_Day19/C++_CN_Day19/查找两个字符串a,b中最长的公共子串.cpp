@@ -23,7 +23,7 @@ int main()
 			for (j = i; j < s1.size(); j++)
 			{
 				string tmp = s1.substr(i,j-i+1);//局部变量，每次找完一个循环重新定义初始化
-				if (int(s2.find(tmp)) < 0)//没找到,这里find的返回值是
+				if (int(s2.find(tmp)) < 0)//没找到,这里find的返回值是-1
 				{
 					break;
 				}
