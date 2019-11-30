@@ -2,75 +2,34 @@
 #include<iostream>
 #include<string>
 #include<vector>
-
 using namespace std;
+
+class A
+{
+private:
+public:
+	static int a;
+};
+
+int A::a = 0;
 
 int main()
 {
-	int num, count = 0;
+	int num;
 	string LS;
 	while (cin >> num >> LS)
 	{
-		for (auto& ch : LS)
-		{
-			if (ch == 'U')
-			{
-				count++;
-			}
-			else
-			{
-				count--;
-			}
-		}
-
+		int start = 1, cur = 1;
 		if (num <= 4)
 		{
-			vector<int> v1;
-			char s1[] = "1432";
-			char s2[] = "1234";
-
-			for (int i = 1; i <= num; i++)
-			{
-				cout << i << " ";
-			}
-
-			if (count == 0)
-			{
-				cout << endl << 1 << endl;
-			}
-
-			else if (count > 0)
-			{
-				cout << endl << s1[count % num ] << endl;
-			}
-			else
-			{
-				cout << endl << s2[count % num ] << endl;
-			}
-		}
-		
-			vector<int> v;
-			int start = 0, end = 3, cur = 0;
-			for (int i = 1; i <= num; i++)
-			{
-				v.push_back(i);
-			}
 			
 			for (auto& ch : LS)
 			{
-				
 				if (ch == 'U')
 				{
-					if (cur == start && cur - 1 < 0)
+					if (cur == 1)
 					{
-						start = cur = num - 1;
-						end--;
-					}
-					else if (cur == start && end - 1 < 0)
-					{
-						start--;
-						cur--;
-						end = num - 1;
+						cur = num;
 					}
 					else
 					{
@@ -79,16 +38,9 @@ int main()
 				}
 				else
 				{
-					if (cur == end && cur + 1 > num - 1)
+					if (cur == num)
 					{
-						end = cur = 0;
-						start++;
-					}
-					else if (cur == end && start + 1 > num-1)
-					{
-						start = 0;
-						cur++;
-						end++;
+						cur = 1;
 					}
 					else
 					{
@@ -96,62 +48,68 @@ int main()
 					}
 				}
 			}
-			for (int i = 0; i < 4; i++)
+			int i;
+			for (i = 1; i < num; i++)
 			{
-				if (count > 0)
-				{
-					cout << v[cur + i] << "";
-				}
+				cout << i << " ";
 			}
-			cout << endl<< v[cur] << endl;
-		/*else
+			cout << num << endl;
+			cout << cur << endl;
+		}
+
+		else
 		{
-			if(count == 0)
+			for (auto& ch : LS)
 			{
-				cout << 1 << " " << 2 << " " << 3 << " " << 4 << endl;
-				cout << 1 << endl;
-			}
-			else if (count > 0)
-			{
-				vector<int> v;
-				v.push_back(1);
-				for (int i = num; i >1; i--)
+
+				if (ch == 'U')
 				{
-					v.push_back(i);
-				}
-				int pos = count % num;
-				for (int i = 0; i < 4; i++, pos--)
-				{
-					if (pos < 0)
+					if (cur == start)
 					{
-						pos = num - 1;
+						if (cur == 1)
+						{
+							start = num - 3;
+							cur = num;
+						}
+						else
+						{
+							cur--;
+							start--;
+						}
 					}
-					cout << v[pos] << " ";
-				}
-				cout << endl << v[count%num] << endl;
-			}
-			else
-			{
-				count *= -1;
-				vector<int> v;
-				v.push_back(1);
-				for (int i = 2; i <= num; i++)
-				{
-					v.push_back(i);
-				}
-				int pos = count % num;
-				for (int i = 0; i < 4; i++,pos++)
-				{
-					if (pos > num - 1)
+					else
 					{
-						pos = 0;
+						cur--;
 					}
-					cout << v[pos] << " ";
+
 				}
-				cout << endl << v[count%num] << endl;
+				else
+				{
+					if (cur == num  && start == num - 3)
+					{
+						cur = 1;
+						start = 1;
+					}
+					else if (start != num - 3 && cur == start + 3)
+					{
+						cur++;
+						start++;
+					}
+					else
+					{
+						cur++;
+					}
+				}
 			}
-		}*/
+			for (int i = 0; i < 3; i++)
+			{
+				cout << i + start << " ";
+
+			}
+			cout << start + 3 << endl;
+			cout  << cur << endl;
+		}
 	}
-    system("pause");
-    return 0;
+	system("pause");
+	return 0;
 }
