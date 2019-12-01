@@ -68,7 +68,7 @@ public:
 		return 0;
 	}
 };
-int main()
+int main1111()
 {
 	Solution test;
 	vector<int> ar = { 1, 2, 3, 2, 4, 2, 5, 2, 3 };//
