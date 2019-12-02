@@ -8,8 +8,9 @@ int main()
 	string s1, s2;
 	while (cin >> s1 >> s2)
 	{
-		if(s1.size()<s2.size())
-		{]\
+		if (s1.size() < s2.size())
+		{
+		}
 	}
     system("pause");
     return 0;
