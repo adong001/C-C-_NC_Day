@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<iostream>
 #include<vector>
-#include<cstring>
+//#include<cstring>
 using namespace std;
 #define ENTER_X 0   //Èë¿ÚÎ»ÖÃ
 #define ENTER_Y 0
@@ -121,8 +121,8 @@ int main()
 			}
 		}
 		GetPath(v, ENTER_X, ENTER_Y);
-		vector<Point>::iterator ip;
-		for (ip = BestPath.begin(); ip != BestPath.end(); ip++)
+		//vector<Point>::iterator ip;
+		for (auto  ip = BestPath.begin(); ip != BestPath.end(); ip++)
 		{
 			cout << "(" << ip->x << "," << ip->y << ")" << endl;
 		}

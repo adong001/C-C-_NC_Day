@@ -1,43 +1,29 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<iostream>
 #include<vector>
+#include<cstdio>
 using namespace std;
 
- pow(int k)
 
-{
-
-	if (k == 0)
-
-	{
-
-		Matrix ans(h_size(), h_size());
-
-		for (int i = 0; i != ans.h_size(); ++i)
-
-			ans[i][i] = 1;
-		return ans;
-
-	}
-
-	if (k == 2)return (*this)*(*this);
-
-	if (k % 2)return pow(k - 1)*(*this);
-
-	return pow(k / 2).pow(2);
-}
 
 int main()
 {
 	int num,tmp;
-	vector<int> v;
-	while (cin >> num)
+	vector<int> v(1001, 0);
+	v[0] = 1;
+	v[1] = 1;
+	for (int i = 2; i < 1001;i++)
 	{
-		while (cin >> tmp)
+		v[i] = (v[i - 1]%1000 + v[i - 2]%1000)%1000;
+	}
+	while (cin>>num)
+	{
+		while(num--)
 		{
-			v.push_back(tmp);
+			cin >> tmp;
+			printf("%04d", v[tmp]);
 		}
-
+		cout << endl;
 	}
     system("pause");
     return 0;
