@@ -2,8 +2,9 @@
 #include<iostream>
 #include<vector>
 #include<string>
+#include<sstream>
 #include<cstring>
-#include<unordered_set>
+#include<unordered_map>
 using namespace std;
 
 //给定两个句子 A 和 B 。 （句子是一串由空格分隔的单词。每个单词仅由小写字母组成。）
@@ -26,40 +27,48 @@ using namespace std;
 
 class Solution {
 public:
-	
-	unordered_set<string> GetWord(string s)
-	{
-		unordered_set<string> ss;
-		int i, j;
-		for (i = 0; i < s.size();i = j)
-		{
-			for (j = i + 1; j < s.size(); j++)
-			{
-				if (j < s.size() ||isspace(s[j]))
-				{
-					ss.insert(s.substr(i, j - i));
-					break;
-				}
-			}
-			j++;
-			while (isspace(s[j]) && j < s.size())
-			{
-				j++;
-			}
-		}
-		return ss;
-	}
+	//
+	//unordered_set<string> GetWord(string s)//将字符按空格切割
+	//{
+	//	unordered_set<string> ss;
+	//	int i, j;
+	//	for (i = 0; i < s.size();i = j)
+	//	{
+	//		for (j = i + 1; j <= s.size(); j++)
+	//		{
+	//			if (j <= s.size() && (isspace(s[j]) || j == s.size()))
+	//			{
+	//				ss.insert(s.substr(i, j - i));
+	//				break;
+	//			}
+	//		}
+	//		j++;
+	//		while (j < s.size() && isspace(s[j]))
+	//		{
+	//			j++;
+	//		}
+	//	}
+	//	return ss;
+	//}
 	vector<string> uncommonFromSentences(string A, string B)
 	{
-		unordered_set<string> ss1,ss2;
+		unordered_map<string,int> um;
+
+		istringstream is(A + " " + B);
+
 		vector<string> vs;
-		ss1 = GetWord(A);
-		ss2 = GetWord(B);
-		for (auto& e : ss2)
+		string str;
+
+		while (is >> str)//通过字符串输入输出流将空格截断成一个个单词
 		{
-			if (!ss1.insert(e).second)
+			um[str]++;//哈希映射，若之前存在的单词对应的second++
+		}
+		for (auto& e : um)
+		{
+			if (e.second == 1)//若这个单词只出现一次，就push进去
 			{
-				vs.push_back(e);
+				vs.push_back(e.first);
+				
 			}
 		}
 		return vs;
@@ -69,9 +78,7 @@ int main()
 {
 	string A = "this apple is sweet", B = "this apple is sour";
 	Solution s;
-	unordered_set<string> ss1;
 	vector<string> vs;
-	ss1 = s.GetWord(A);
 	vs = s.uncommonFromSentences(A, B);
 	for (auto&e : vs)
 	{

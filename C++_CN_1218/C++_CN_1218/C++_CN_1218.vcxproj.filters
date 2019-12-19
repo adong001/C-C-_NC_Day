@@ -27,5 +27,8 @@
     <ClCompile Include="重复n次元素.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="两个数组的交集ii.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
