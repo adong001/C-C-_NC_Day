@@ -34,20 +34,26 @@ public:
 	bool isLongPressedName(string name, string typed) 
 	{
 		int i, j;
-		for (i = 0, j = 0; i < name.size() && j < typed.size();)
+		int count1 = 0, count2 = 0;
+		for (i = 1, j = 1; i < name.size() && j < typed.size();)
 		{
-			if (typed[j] == name[i])//相同，j++
+			do
 			{
-				j++;
-			}
-			else if(i < name.size() && name[i + 1] == typed[j])//不同，但下一个相同，i++
-			{
+				count1++;
 				i++;
-			}
-			else//下一个也不相同
+			} while (name[i - 1] == name[i] && i < name.size());
+
+			do
+			{
+				count2++;
+				j++;
+			} while (typed[j - 1] == typed[j] && j < typed.size());
+
+			if (count1 > count2)
 			{
 				return false;
 			}
+			count1 = count2 = 0;
 		}
 		return true;
 	}
