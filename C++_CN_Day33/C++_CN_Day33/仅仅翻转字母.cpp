@@ -26,7 +26,16 @@ class Solution {
 public:
 	string reverseOnlyLetters(string S) 
 	{
-
+		int i;
+		char ch;
+		int size = S.size();
+		for (i = 0; i <= size / 2; i++)
+		{
+			ch = S[i];
+			S[i] = S[size - i - 1];
+			S[size - i - 1] = ch;
+		}
+		return S;
 	}
 };
 
