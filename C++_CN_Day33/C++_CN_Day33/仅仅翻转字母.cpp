@@ -1,6 +1,7 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS 1
 #include<iostream>
 #include<string>
+#include<cstring>
 using namespace std;
 //给定一个字符串 S，返回 “反转后的” 字符串，其中不是字母的字符都保留在原地，
 //而所有字母的位置发生反转。
@@ -24,23 +25,32 @@ using namespace std;
 
 class Solution {
 public:
-	string reverseOnlyLetters(string S) 
+	string reverseOnlyLetters(string S)
 	{
-		int i;
+		string s = S;
+		int i, j;
 		char ch;
-		int size = S.size();
-		for (i = 0; i <= size / 2; i++)
+		for (i = 0, j = S.size() - 1; i < j;)
 		{
-			ch = S[i];
-			S[i] = S[size - i - 1];
-			S[size - i - 1] = ch;
+			while (!isalpha(S[i])){ i++; }
+			while (!isalpha(S[j])){ j--; }
+			if (i < j)
+			{
+				ch = s[i];
+				s[i] = s[j];
+				s[j] = ch;
+				i++;
+				j--;
+			}
 		}
-		return S;
+		return s;
 	}
 };
 
 int main4()
 {
-    system("pause");
-    return 0;
+	Solution s;
+	cout << s.reverseOnlyLetters("a - bC - dEf - ghIj");
+	system("pause");
+	return 0;
 }

@@ -33,27 +33,32 @@ class Solution {
 public:
 	bool isLongPressedName(string name, string typed) 
 	{
-		int i, j;
-		int count1 = 0, count2 = 0;
-		for (i = 1, j = 1; i < name.size() && j < typed.size();)
+		int i = 0,j = 0;
+		int len1 = name.size();
+		int len2 = typed.size();
+
+		while (i < len1 && j < len2)
 		{
-			do
+			if (name[i] == typed[j])
 			{
-				count1++;
 				i++;
-			} while (name[i - 1] == name[i] && i < name.size());
-
-			do
-			{
-				count2++;
 				j++;
-			} while (typed[j - 1] == typed[j] && j < typed.size());
+			}
 
-			if (count1 > count2)
+			else if(j > 0 && typed[j - 1] == typed[j])
+			{
+				j++;
+			}
+
+			else
 			{
 				return false;
 			}
-			count1 = count2 = 0;
+		}
+
+		if (i != len1)
+		{
+			return false;
 		}
 		return true;
 	}
@@ -65,11 +70,14 @@ int main()
 		name = "saeed", typed = "ssaaedd"
 		name = "leelee", typed = "lleeelee"
 		name = "laiden", typed = "laiden"*/
+
 	Solution s;
 	cout<<s.isLongPressedName("alex", "aaleex")<<endl;
 	cout << s.isLongPressedName("saeed", "ssaaedd") << endl;
 	cout << s.isLongPressedName("leelee", "lleeelee") << endl;
 	cout << s.isLongPressedName("laiden", "laiden") << endl;
+	cout << s.isLongPressedName("kikcxmvzi", "kiikcxxmmvvzz") << endl;
+		
     system("pause");
     return 0;
 }
