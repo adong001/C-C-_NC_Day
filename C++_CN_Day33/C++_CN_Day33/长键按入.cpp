@@ -64,7 +64,7 @@ public:
 	}
 };
 
-int main()
+int main2()
 {
 	/*name = "alex", typed = "aaleex" t f t t
 		name = "saeed", typed = "ssaaedd"

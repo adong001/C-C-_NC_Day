@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{04B012D7-E7B5-46CE-824F-D758D47045B5}</ProjectGuid>
-    <RootNamespace>C_CN_Day33</RootNamespace>
+    <ProjectGuid>{4A0EA91F-71B2-4ADD-B843-B1D08665800C}</ProjectGuid>
+    <RootNamespace>C_CN_Day34</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -64,11 +64,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.c" />
-    <ClCompile Include="仅仅翻转字母.cpp" />
-    <ClCompile Include="存在重复元素.cpp" />
-    <ClCompile Include="有序数组的平方.cpp" />
-    <ClCompile Include="长键按入.cpp" />
+    <ClCompile Include="加一.cpp" />
+    <ClCompile Include="寻找数组的中心索引.cpp" />
+    <ClCompile Include="按奇偶排序数组.cpp" />
+    <ClCompile Include="第三大的数.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

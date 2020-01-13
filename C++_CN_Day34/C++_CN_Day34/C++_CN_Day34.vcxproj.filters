@@ -15,19 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="存在重复元素.cpp">
+    <ClCompile Include="按奇偶排序数组.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="长键按入.cpp">
+    <ClCompile Include="寻找数组的中心索引.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="有序数组的平方.cpp">
+    <ClCompile Include="加一.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="仅仅翻转字母.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="main.c">
+    <ClCompile Include="第三大的数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
