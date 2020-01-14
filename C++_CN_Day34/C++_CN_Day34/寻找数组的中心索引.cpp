@@ -24,39 +24,25 @@ class Solution {
 public:
 	int pivotIndex(vector<int>& nums) 
 	{
-		int pos1,pos2,i;
-		int left = 0, right = 0;
+		int sum = 0,sumleft = 0,pos;
 		int size = nums.size();
-		for (i = 0; i < size / 2 - 1; i++)
+		for (auto& e : nums)
 		{
-			left += nums[i];
+			sum += e;
 		}
 
-		pos1 = nums[size / 2 - 1];
-		if (size % 2 == 0)//偶数
+		for (pos = 0; pos < size; pos++)
 		{
-			pos2 = nums[size / 2];
+			if ((nums[pos] + sumleft * 2) == sum)
+			{
+				return pos;
+			}
+			else
+			{
+				sumleft += nums[pos];
+			}
 		}
-		else
-		{
-			i++;
-			left += nums[i];
-			pos1 = nums[size / 2];
-			i++;
-		}
-
-		for (; i < size ; i++)
-		{
-			right += nums[i];
-		}
-		if (left == right)
-		{
-			return pos1;
-		}
-		else
-		{
-			return -1;
-		}
+		return -1;
 	}
 };
 int main2()
