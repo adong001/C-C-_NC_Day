@@ -56,6 +56,9 @@ public:
 
 int main3()
 {
+	string s = "-23345676543";
+	Solution s;
+	s.myAtoi();
     system("pause");
     return 0;
 }
