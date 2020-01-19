@@ -57,8 +57,8 @@ public:
 int main3()
 {
 	string s = "-23345676543";
-	Solution s;
-	s.myAtoi();
+	Solution s1;
+	s1.myAtoi(s);
     system("pause");
     return 0;
 }
