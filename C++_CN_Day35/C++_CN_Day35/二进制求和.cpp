@@ -17,7 +17,14 @@ class Solution {
 public:
 	string addBinary(string a, string b) 
 	{
-
+		char tmp;
+		int i = a.size() - 1;
+		int j = b.size() - 1;
+		string ret;
+		for (; i >= 0;i--)
+		{
+			for()
+		}
 	}
 };
 int main2()
