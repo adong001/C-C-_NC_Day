@@ -67,7 +67,7 @@ public:
 	}
 };
 
-int main()
+int main4()
 {
     system("pause");
     return 0;
