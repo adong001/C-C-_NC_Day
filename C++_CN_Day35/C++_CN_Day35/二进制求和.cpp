@@ -18,70 +18,24 @@ class Solution {
 public:
 	string addBinary(string a, string b)
 	{
-		char tmp = 0;//进位
-		int i, j;
-		string ret, ch;
-		for (i = a.size() - 1, j = b.size() - 1; i >= 0 && j >= 0; i--, j--)
+		int tmp = 0;//进位
+		int i = a.size() - 1, j = b.size() - 1;
+		string ret;
+		for (; i >= 0 || j >= 0 || tmp != 0; i--, j--)
 		{
-			if ((a[i] - '0') + (b[j] - '0') + tmp == 0)
-			{
-				tmp = 0;
-				ret.push_back('0');
-			}
-			else if ((a[i] - '0') + (b[j] - '0') + tmp == 1)
-			{
-				tmp = 0;
-				ret.push_back('1');
-			}
-			else if ((a[i] - '0') + (b[j] - '0') + tmp == 2)
-			{
-				tmp = 1;
-				ret.push_back('0');
-			}
-			else
-			{
-				tmp = 1;
-				ret.push_back('1');
-			}
-		}
-		if (i >= 0)//a未算完
-		{
-			ch.insert(ch.begin(), a.begin(), a.begin() + i + 1);
-		}
-		else//b未算完
-		{
-			ch.insert(ch.begin(), b.begin(), b.begin() + i + 1);
-		}
-		for (i = ch.size() - 1; i >= 0; i--)
-		{
-			if ((ch[i] - '0') + tmp == 0)
-			{
-				ret.push_back('0');
-				tmp = 0;
-			}
-			else if ((ch[i] - '0') + tmp == 1)
-			{
-				ret.push_back('1');
-				tmp = 0;
-			}
-			else
-			{
-				ret.push_back('0');
-				tmp = 1;
-			}
-		}
-		if (tmp == 1)
-		{
-			ret.push_back('1');
+			tmp = (i >= 0 ? tmp + a[i] - '0' : tmp);
+			tmp = (j >= 0 ? tmp + b[j] - '0': tmp);
+			ret.push_back(tmp % 2 + '0');
+			tmp >>= 1;
 		}
 		reverse(ret.begin(), ret.end());
 		return ret;
 	}
 };
-int main()
+int main42()
 {
 	Solution s;
-	s.addBinary("111", "1");
+	cout<<s.addBinary("111", "1");
 	system("pause");
 	return 0;
 }

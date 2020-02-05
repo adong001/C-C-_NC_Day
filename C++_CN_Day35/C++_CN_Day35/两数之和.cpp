@@ -47,6 +47,7 @@ public:
 	}
 };
 
+
 int main1()
 {
 	vector<int> ar = { -11, -2, -3, -4, -5, };

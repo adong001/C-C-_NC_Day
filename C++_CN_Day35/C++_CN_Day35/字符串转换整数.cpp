@@ -1,6 +1,8 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS 1
 #include<iostream>
+#include<cstring>
 #include<string>
+#include<algorithm>
 using namespace std;
 //请你来实现一个 atoi 函数，使其能将字符串转换成整数。
 //首先，该函数会根据需要丢弃无用的开头空格字符，
@@ -27,7 +29,7 @@ using namespace std;
 //输入: "   -42"
 //输出: -42
 //解释 : 第一个非空白字符为 '-', 它是一个负号。
-//		 我们尽可能将负号与后面所有连续出现的数字组合起来，最后得到 - 42 。
+//		 我们尽可能将负号与后面所有连续出现的数字组合起来，最后得到-42 。
 
 //示例 3 :
 //输入 : "4193 with words"
@@ -46,19 +48,62 @@ using namespace std;
 //解释 : 数字 "-91283472332" 超过 32 位有符号整数范围。
 //		因此返回 INT_MIN(−231) 。
 
-class Solution {
+class Solution
+{
 public:
-	int myAtoi(string str) 
+	int myAtoi(string str)
 	{
-		return 0;
+		long long retval = 0;
+		int len = str.size();
+		int count = 0;
+		long long tmp = 0;
+		int sign = 1;//符号位，
+		int i = 0;
+		if (str.empty())//为空
+		{
+			return retval;
+		}
+		while (isspace(str[i]) && i < len)//去掉前面的不可见字符
+		{
+			i++;
+		}
+
+		if (str[i] == '-' || str[i] == '+')
+		{
+			if (str[i] == '-')//判断符号位
+			{
+				sign = -1;
+			}
+			i++;
+		}
+
+		if (i >= len || !isdigit(str[i]))//若全部为不可见字符则return
+		{
+			return retval;
+		}
+
+		for (; i <= len && isdigit(str[i]); i++, count++)
+		{
+			retval = (tmp * 10 + str[i] - '0');
+			tmp = retval;
+			if (retval > INT_MAX)
+			{
+				return sign > 0 ? INT_MAX : INT_MIN;
+			}
+		}
+		return retval * sign;
 	}
 };
 
-int main3()
+int main()
 {
-	string s = "-23345676543";
+	string s = "   23345676543";
 	Solution s1;
-	s1.myAtoi(s);
+	//cout << s1.myAtoi("-2147483647") << endl;
+	cout << s1.myAtoi("-23345676543")<<endl;
+	cout << s1.myAtoi("   -42  wwcw") << endl;
+	cout << s1.myAtoi("sd   -42  ") << endl;
+	cout << s1.myAtoi("   ") << endl;
     system("pause");
     return 0;
 }
