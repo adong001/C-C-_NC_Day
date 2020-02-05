@@ -64,6 +64,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="两数之和.cpp" />
     <ClCompile Include="二进制求和.cpp" />
     <ClCompile Include="在排序数组中查找元素的第一个和最后一个位置.cpp" />
