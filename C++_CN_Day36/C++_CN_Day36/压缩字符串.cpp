@@ -1,6 +1,7 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS 1
 #include<iostream>
 #include<vector>
+#include<unordered_set>
 using namespace std;
 //给定一组字符，使用原地算法将其压缩。压缩后的长度必须始终小于或等于原数组长度。
 //数组的每个元素应该是长度为1 的字符（不是 int 整数类型）。
@@ -43,11 +44,61 @@ class Solution {
 public:
 	int compress(vector<char>& chars) 
 	{
+		char tmp = chars[0];
+		int count = 1;
+		int len = chars.size();
+		int i;
+		int flag = 1;
+		int pos = 0;
+		for (i = 0; i < len; )
+		{
+			tmp = chars[i];
+			while (i < len && chars[i] == tmp)
+			{
+				count++;
+				i++;
+			}
+			if (count > 1)//若这个字符需要被压缩则count>1
+			{
 
+				chars[pos] = tmp;//pos记录的是新的数组的下标,pos位置覆盖tmp字符，
+				if (count > 9)//若某个字符的长度大于9，则需要分解
+				{
+					string str;
+					int res = 0;
+					while (count)//将其长度先转换为字符
+					{
+						str.push_back(count % 10 + '0');
+						count /= 10;
+					}
+					reverse(str.begin(), str.end());
+					for (auto& ch : str)//在覆盖到chars的对应位置
+					{
+						chars[++pos] = ch;
+					}
+				}
+				else
+				{
+					chars[++pos] = count + '0';//pos+1位置覆盖tmp字符的长度
+				}
+				++pos;
+				count = 0;//这个字符记录完毕，count置1，继续记录下一个
+				flag = pos;//这个flag目的是防止数组中只有一个数据时,外层循环进不来，
+				           //就把唯一的元素删掉了，而且还返回0
+			}
+			
+		}
+		chars.erase(chars.begin() + pos, chars.end());
+		//删除时删pos位置以后的数据，不管进不进外层循环，都能保证正确删除
+		return flag;
 	}
 };
-int main2()
+int main()
 {
+
+	Solution s;
+	vector<char> ss{ 'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b' };
+	cout << s.compress(ss);
     system("pause");
     return 0;
 }
