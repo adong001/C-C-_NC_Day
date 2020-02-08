@@ -93,7 +93,7 @@ public:
 		return flag;
 	}
 };
-int main()
+int main222()
 {
 
 	Solution s;
