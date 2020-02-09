@@ -58,7 +58,42 @@ public:
 		return retval;
 	}
 };
-int main()
+
+class Solution1
+{
+public:
+	vector<int> rightSideView(TreeNode* root)
+	{
+		vector<int> retval;
+		queue<TreeNode*> qt;
+		TreeNode* tmp = root;
+		if (!root)
+		{
+			return retval;
+		}
+		qt.push(tmp);
+		while (!qt.empty())
+		{
+			int length = qt.size();
+			retval.push_back(qt.front()->val);
+			while (length--)//将上层的所有元素的左右孩子都入队
+			{
+				tmp = qt.front();
+				qt.pop();
+				if (tmp->right)//有右孩子先入右孩子
+				{
+					qt.push(tmp->right);
+				}
+				if (tmp->left)
+				{
+					qt.push(tmp->left);
+				}
+			}
+		}
+		return retval;
+	}
+};
+int main1()
 {
 	Solution s;
 	TreeNode* root = new TreeNode(1);

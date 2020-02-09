@@ -65,6 +65,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="二叉树的右视图.cpp" />
+    <ClCompile Include="公交路线.cpp" />
+    <ClCompile Include="子集.cpp" />
+    <ClCompile Include="矩阵中最长递增路径.cpp" />
+    <ClCompile Include="通配符匹配.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

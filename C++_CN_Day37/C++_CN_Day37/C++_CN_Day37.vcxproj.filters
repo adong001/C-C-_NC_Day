@@ -18,5 +18,17 @@
     <ClCompile Include="二叉树的右视图.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="公交路线.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="通配符匹配.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="矩阵中最长递增路径.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="子集.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
