@@ -2,9 +2,18 @@
 #include<iostream>
 //每月赚的钱，第0个是闰年二月的
 int DayofMonth[] = { 29, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-int MonenyofMonth[] = { 29, 62, 56, 31, 60, 31, 60, 31, 31, 60, 31, 60, 31 };
-#define LEAPMONEY  505 //闰年一年赚的钱
-#define UNLEAPMONEY 532 //非闰年
+int MonenyofMonth[] = { 29, 62, 28, 31, 60, 31, 60, 31, 62, 60, 62, 30, 62 };
+#define LEAPMONEY  580 //闰年一年赚的钱
+#define UNLEAPMONEY 579 //非闰年
+
+bool Prime(int month)
+{
+	if (month == 2 || month == 3 || month == 5 || month == 7 || month == 11)
+	{	
+		return true;
+	}
+	return false;
+}
 
 bool IsLeap(int year)
 {
@@ -18,64 +27,54 @@ int main()
 	{
 		int Money = 0;
 		bool IsL = IsLeap(byear);
-		if (bmonth <= 2)//处理开始年的1,2月
+		if (byear == eyear && bmonth == emonth)//同年同月
 		{
-			if (bmonth == 1)
-			{
-				Money += (DayofMonth[bmonth] - bday + 1) * 2;
-				Money += IsL ? MonenyofMonth[0] : MonenyofMonth[2];
-				bmonth += 2;
-			}
-			else
-			{
-				Money += IsL ? (DayofMonth[0] - bday) : (DayofMonth[2] - bday) * 2;
-				bmonth += 1;
-			}
+			Money += Prime(bmonth) ? (eday - bday + 1) : (eday - bday + 1) * 2;
 		}
 
-		if (eyear - byear == 0)
+		else if (byear == eyear && bmonth != emonth)//同年不同月
 		{
-			for (int i = bmonth; i < emonth; ++i)//加开始年以后的整数月份
+			//开始月
+			Money += Prime(bmonth) ? (DayofMonth[bmonth] - bday + 1) : (DayofMonth[bmonth] - bday + 1) * 2;
+			bmonth++;
+			//中间月
+			for (; bmonth < emonth; ++bmonth)
 			{
-				Money += MonenyofMonth[i];
+				Money += MonenyofMonth[bmonth];
 			}
-			Money += DayofMonth[emonth] % 2 ? (MonenyofMonth[emonth] - eday) : (MonenyofMonth[emonth] - eday) * 2;
+			//结束月,
+			Money += Prime(bmonth) ? eday : eday * 2.;
 		}
-		else//加中间隔得年份
+
+		else //不同年不同月
 		{
-			for (int i = bmonth; i <= 12; ++i)//加开始年以后的整数月份
+			IsL = IsLeap(byear);
+			//开始年
+			Money += Prime(bmonth) ? (DayofMonth[bmonth] - bday + 1) : (DayofMonth[bmonth] - bday + 1) * 2;
+			if (bmonth <= 2)
 			{
-				Money += MonenyofMonth[i];
+				Money += IsL ? 1 : 0;
+			}
+			bmonth++;
+			//中间月
+			for (; bmonth <= 12; ++bmonth)
+			{
+				Money += MonenyofMonth[bmonth];
 			}
 
+			//中间年
 			for (int i = byear + 1; i < eyear; ++i)
 			{
 				Money += (IsLeap(i) ? LEAPMONEY : UNLEAPMONEY);
 			}
 
+			//结束年
+			IsL = IsLeap(eyear);
 
-			IsL = IsLeap(eyear);//处理结尾年
-			if (emonth>2)
+			Money += Prime(emonth) ? eday : eday * 2;
+			for (int i = emonth - 1; i > 0; --i)
 			{
-				Money += DayofMonth[emonth] % 2 ? (MonenyofMonth[emonth] - eday) : (MonenyofMonth[emonth] - eday) * 2;
-				for (int i = emonth - 1; i > 2; --i)
-				{
-					Money += DayofMonth[i];
-				}
-			}
-			else//处理结尾年的1,2月
-			{
-				if (emonth == 1)
-				{
-					Money += eday * 2;
-					emonth--;
-				}
-				else
-				{
-					Money += eday >= 29 ? eday : eday * 2;
-					Money += MonenyofMonth[1];
-					bmonth -= 2;
-				}
+				Money += MonenyofMonth[i];
 			}
 		}
 		std::cout << Money << std::endl;
