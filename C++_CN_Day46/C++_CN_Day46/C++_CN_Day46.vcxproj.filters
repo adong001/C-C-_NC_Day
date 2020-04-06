@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="数据库连接池.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="main1.cpp">
+    <ClCompile Include="mkdir.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
