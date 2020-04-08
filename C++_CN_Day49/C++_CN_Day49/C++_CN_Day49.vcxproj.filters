@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="红与黑.cpp">
+    <ClCompile Include="发邮件.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="蘑菇阵.cpp">
+    <ClCompile Include="最长上升子序列.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

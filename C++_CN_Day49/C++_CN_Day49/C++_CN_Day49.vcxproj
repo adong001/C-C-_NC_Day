@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{A46E2C71-4E0E-4EAC-BC4B-DACEED558C17}</ProjectGuid>
-    <RootNamespace>C_CN_Day47</RootNamespace>
+    <ProjectGuid>{8685E3A4-2E03-4674-95B0-27A69599C2B3}</ProjectGuid>
+    <RootNamespace>C_CN_Day49</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -64,8 +64,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="蘑菇阵.cpp" />
-    <ClCompile Include="红与黑.cpp" />
+    <ClCompile Include="发邮件.cpp" />
+    <ClCompile Include="最长上升子序列.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
