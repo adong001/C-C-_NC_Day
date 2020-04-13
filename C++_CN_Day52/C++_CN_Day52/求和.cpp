@@ -1,28 +1,25 @@
-#define _CRT_SECURE_NO_WARNINGS 1
+
 #include<iostream>
-
-int GetAdd(int n, int m)
-{
-	if (m < 1)
-	{
-		return 0;
+#include<vector>
+using namespace std;
+void help(int n, int m, vector<int>& v, int beg) {
+	//if (beg>n) return;
+	if (m == 0) {
+		for (int i = 0; i<v.size(); i++) {
+			i == 0 ? cout << v[i] : cout << " " << v[i];
+		}
+		cout << endl;
 	}
-	if (m == 1)
-	{
-		return 1;
+	for (int i = beg; i <= n&&i <= m; i++) {
+		v.push_back(i);
+		help(n, m - i, v, i + 1);
+		v.pop_back();
 	}
-	for (int i = 0;i<)
-			//std::cout << i << " " << num - i << std::endl;
-	
-		//std::cout << num<<std::endl;
 }
-
-int main()
-{
-	int n, num;
-	while (std::cin >> n >> num)
-	{
-		GetAdd(n, m);
+int main() {
+	int n, m;
+	while (cin >> n >> m) {
+		vector<int>v;
+		help(n, m, v, 1);
 	}
-    return 0;
 }
