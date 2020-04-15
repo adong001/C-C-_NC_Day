@@ -35,7 +35,7 @@ int main()
 			}
 			for (auto& e : mb)
 			{
-				if ((ma.find(e.first) != ma.end()) && (ma[e.first] >= mb[e.first]))
+				if ((ma.find(e.first) != ma.end()) && (ma[e.second] >= mb[e.second]))
 				{
 					continue;
 				}
