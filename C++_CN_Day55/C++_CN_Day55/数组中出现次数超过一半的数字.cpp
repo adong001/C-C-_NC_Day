@@ -43,6 +43,8 @@ public:
 		return 0;
 	}
 
+
+
 	//方法二:先排序，如果一个数超过数组的一半，那么排序后，他一定在数组中间
 	//时间复杂度O(N*LogN) 空间复杂度O(1)
 	int MoreThanHalfNum_Solution2(vector<int> numbers)
