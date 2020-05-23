@@ -1,29 +1,33 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
-#include<map>
+#include<vector>
 using namespace std;
 
-int main()
+int main5()
 {
 	int n;
 	while (cin >> n)
 	{
-		map<int, int> m;
-		while (cin >> n)
+		vector<int> m;
+		int count = 0, tmp;
+		for (int i = 0; i < n; i++)
 		{
-			m[n]++;
-		}
-		int max = -1000000;
-		int tmp = m[n];
-		for (auto it = m.begin(); it != m.end(); it++)
-		{
-			if (max > it->second)
+			cin >> m[i];
+			if (count == 0)
 			{
-				max = it->second;
-				tmp = it->first;
+				tmp = m[i];
+				count = 1;
+			}
+			else if (tmp != m[i])
+			{
+				count--;
+			}
+			else
+			{
+				count++;
 			}
 		}
-		cout << tmp;
+		cout << tmp << endl;
 	}
 	return 0;
 }
