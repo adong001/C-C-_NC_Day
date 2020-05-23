@@ -25,19 +25,22 @@ public:
 	{
 		int carry = 0,tmp,v2;
 		ListNode* cur = l1;
+		ListNode* pre = cur;
 		while (cur != NULL || l2 != NULL || carry != 0)
 		{
 			if (cur == NULL)
 			{
 				cur = new ListNode(0);
+				pre->next = cur;
 			}
 			if (l2 == NULL)
 			{
 				l2 = new ListNode(0);
 			}
-			tmp = (cur->val + v2) + carry;
+			tmp = (cur->val + l2->val) + carry;
 			carry = tmp / 10;
 			cur->val = tmp % 10;
+			pre = cur;
 			cur = cur->next;
 			l2 = l2->next;
 		}
