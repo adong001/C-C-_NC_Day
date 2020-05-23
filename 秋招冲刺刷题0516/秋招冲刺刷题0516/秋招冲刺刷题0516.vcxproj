@@ -65,6 +65,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="1两数之和.cpp" />
+    <ClCompile Include="l两数相加.cpp" />
     <ClCompile Include="整数翻转.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

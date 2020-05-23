@@ -21,5 +21,8 @@
     <ClCompile Include="整数翻转.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="l两数相加.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
