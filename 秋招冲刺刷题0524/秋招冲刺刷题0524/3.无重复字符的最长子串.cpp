@@ -26,48 +26,38 @@ class Solution
 public:
 	int lengthOfLongestSubstring(string s) 
 	{
-		int max = 0, count;
+		int max = 0,tmp;
 		int Size = s.size();
-		map<char, int> mc;
-		for (int start = 0, end = 0; end < Size; end = start)
+		if (Size == 0 || Size == 1)
 		{
-			count = 0;
-			mc.clear();
-			bool flag = false;
-			for (; end < Size; end++, count++)
+			return Size;
+		}
+		map<char, int> mc;
+		for (int start = 0, end = 0; end < Size;end++)
+		{
+			short flag = 1;
+			for (; end < Size; end++)
 			{
-				if (mc.count(s[end]))
+				if (mc.count(s[end]) && mc[s[end]] >= start || end + 1 == Size && end++)
 				{
-					flag = true;
+					flag = 0;
 					break;
 				}
 				mc[s[end]] = end;
 			}
-			start = flag ? mc[s[end]] + 1 : end;
-			max = max > count ? max : count;
+			max = max > end - start + flag ? max : end - start + flag;
+			start = !flag ? mc[s[end]] + 1 : end ;
+			mc[s[end]] = end;
 		}
 		return max;
 	}
 };
 
-int lengthOfLongestSubstring(string s)
-{
-	int l = 0, r = l, _max = 0;
-	set<char> sc;
-	while (r != s.size())
-	{
-		if (sc.find(s[r]) == sc.end())//没找到
-		{
-			sc.insert(s[r++]);
-			_max = _max > r - l ?_max :r - 1;
-		}
-		else sc.erase(s[l++]);
-	}
-	return _max;
-}
 int main1()
 {
 	Solution s;
-	cout << s.lengthOfLongestSubstring("dvdf") << endl;
+	cout << s.lengthOfLongestSubstring("aab") << endl;
+	cout << s.lengthOfLongestSubstring("abcdbaf") << endl;
+	cout << s.lengthOfLongestSubstring("dedf") << endl;
     return 0;
 }
