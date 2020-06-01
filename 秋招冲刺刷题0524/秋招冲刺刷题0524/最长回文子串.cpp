@@ -34,7 +34,39 @@ public:
 
 	}
 };
+//class test
+//{
+//public:
+//	void f1()
+//	{
+//		cout << "f1" << endl;
+//	}
+//	void f2()const
+//	{
+//		cout << " f2" << endl;
+//	}
+//	void f3()
+//	{
+//		f2();
+//	}
+//	void f4()const
+//	{
+//		const_cast<test&>(*this).f1();
+//	}
+//};
+//int main()
+//{
+//	test t1;
+//	const test t2;
+//	t1.f1();
+//	t1.f2();
+//	const_cast<test&>(t2).f1();
+//	t2.f2();
+//    return 0;
+//}
+
 int main()
 {
-    return 0;
+
+	return 0;
 }
