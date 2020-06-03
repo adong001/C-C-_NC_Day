@@ -141,18 +141,21 @@ public:
 int main()
 {
 	string s;
-	while (cin >> s)
+	getline(cin, s);
+	if (s.empty())
 	{
-		int Size = s.size();
-		int max = 0, len = 0, i, pos;
-		for (i = 0; i < Size;)
-		{
-			for (; i < Size && i + 1 < Size && isdigit(s[i]) && s[i + 1] - s[i] == 1; i++, len++);
-			i++;
-			max > len ? max : max = len, pos = i;
-			len = 0;
-		}
-		string ret(s.begin() + pos - max - 1, s.begin() + pos);
-		cout << ret << endl;;
+		return 0;
 	}
+	int Size = s.size();
+	int max = 0, len = 0, i, pos = 0;
+	for (i = 0; i < Size;)
+	{
+		for (; i + 1 < Size && isdigit(s[i]) && s[i + 1] - s[i] == 1; i++, len++);
+		i++;
+		len > max ? max = len + 1, pos = i : max;
+		len = 0;
+	}
+	string ret(s.begin() + pos - max, s.begin() + pos);
+	cout << ret << endl;
+	return 0;
 }
