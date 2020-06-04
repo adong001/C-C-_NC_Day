@@ -37,3 +37,23 @@ int main1()
     system("pause");
     return 0;
 }
+
+/*int main() 
+{
+    int n;
+    cin >> n;
+    vector<int> v(n);
+     for(int i = 0;i < n;i++)
+    {
+        cin >> v[i];
+    }
+    int sum = 0,max = v[0];
+    for(int i = 0;i < n;i++)
+    {
+        sum >= 0 ? sum += v[i] : sum = v[i];
+        max < sum ? max = sum : sum;
+        sum < 0 ? sum = 0 : sum;
+    }
+    cout << max << endl;
+    return 0;
+}*/
